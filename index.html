@@ -3,100 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B Pure Unscented Case Study</title>
+  <title>B Pure Unscented Case Study | Elizabeth Caldwell</title>
   <style>
+    :root {
+      --text: #191919;
+      --muted: #6f6a64;
+      --line: #e8e2dc;
+      --accent: #b86f4d;
+      --bg: #fbfaf8;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.6;
-      color: #222;
-      background: #fafafa;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    header {
+      height: 74px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 42px;
+      background: var(--bg);
+    }
+
+    header a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 90px 24px 80px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-weight: 600;
     }
 
     h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin: 0 0 24px;
+      font-weight: 500;
+    }
+
+    .lead {
+      max-width: 690px;
+      font-size: 18px;
       color: #2f2f2f;
-      margin-bottom: 8px;
+      margin-bottom: 34px;
     }
 
-    h2 {
-      margin-top: 36px;
-      color: #4a4a4a;
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 72px;
     }
 
-    .subtitle {
-      color: #666;
-      font-size: 1.1rem;
-      margin-bottom: 32px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 28px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    a.button {
+    .button {
       display: inline-block;
-      margin-top: 20px;
       padding: 12px 18px;
-      background: #6b5b3e;
-      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: var(--card);
     }
 
-    a.button:hover {
-      background: #4f422d;
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+      font-weight: 700;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #8b8580;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 58px 0 26px;
+    }
+
+    .section-label::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .cell {
+      padding: 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cell:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .cell:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .cell strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .cell p {
+      margin: 0;
+      color: #4d4a47;
+      font-size: 14px;
+    }
+
+    .summary {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 34px 0;
+      color: #3d3935;
     }
 
     footer {
-      margin-top: 48px;
-      font-size: 0.9rem;
-      color: #777;
+      margin-top: 70px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 0 22px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cell,
+      .cell:nth-child(odd) {
+        border-right: none;
+      }
+
+      .cell:nth-last-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
+  <header>
+    <a href="https://elizabethcaldwell.github.io/Portfolio/">Elizabeth Caldwell</a>
+    <nav>
+      <a href="https://elizabethcaldwell.github.io/Portfolio/">Portfolio</a>
+      <a href="BPure_Unscented_Strategic_Brief.pdf" download>Download Brief</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="eyebrow">Consumer Insights · Brand Strategy · Market Research</div>
+
     <h1>B Pure Unscented</h1>
-    <p class="subtitle">
-      A Product Extension Proposal for Dollar Tree’s B Pure Line
+
+    <p class="lead">
+      A product extension proposal for Dollar Tree’s B Pure line, focused on an accessible,
+      fragrance-free organic cotton pad option for consumers with sensitivity concerns.
     </p>
 
-    <p>
-      This case study presents a product extension proposal for an unscented version
-      of Dollar Tree’s B Pure organic cotton pads. The brief includes market analysis,
-      demographic modeling, competitive positioning, consumer demand signals, product
-      recommendations, and campaign strategy.
-    </p>
+    <div class="buttons">
+      <a class="button primary" href="BPure_Unscented_Strategic_Brief.pdf" download>Download full brief →</a>
+      <a class="button" href="https://elizabethcaldwell.github.io/Portfolio/">Back to portfolio</a>
+    </div>
 
-    <h2>Project Focus</h2>
-    <p>
-      The proposal identifies an opportunity for Dollar Tree to expand its B Pure line
-      with an accessible, fragrance-free product designed for consumers with sensitivity
-      concerns who are currently underserved at lower price points.
-    </p>
+    <div class="section-label">Project Overview</div>
 
-    <h2>Skills Demonstrated</h2>
-    <p>
-      Consumer insights, market research, demographic analysis, competitive analysis,
-      product strategy, campaign planning, and executive-level business writing.
-    </p>
+    <div class="summary">
+      This independent case study evaluates the market opportunity for a B Pure Unscented
+      product extension. The brief analyzes consumer demand, demographic fit, competitive
+      positioning, product specifications, launch strategy, and campaign execution.
+    </div>
 
-    <a class="button" href="BPure_Unscented_Strategic_Brief.pdf" download>
-      Download Full Brief
-    </a>
-  </div>
+    <div class="section-label">Case Study Snapshot</div>
 
-  <footer>
-    Independent case study by Elizabeth Caldwell. This project is not affiliated with
-    or endorsed by Dollar Tree.
-  </footer>
+    <div class="grid">
+      <div class="cell">
+        <strong>Market Opportunity</strong>
+        <p>Identifies an underserved accessibility gap in affordable fragrance-free period care.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Consumer Insight</strong>
+        <p>Centers documented consumer demand for unscented, sensitivity-safe product options.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Strategic Fit</strong>
+        <p>Connects Dollar Tree’s core shopper profile with B Pure’s existing product momentum.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Launch Strategy</strong>
+        <p>Recommends creator-led campaign execution, shelf velocity testing, and SKU expansion.</p>
+      </div>
+    </div>
+
+    <div class="section-label">Skills Demonstrated</div>
+
+    <div class="grid">
+      <div class="cell">
+        <strong>Consumer Research</strong>
+        <p>Review synthesis, demand signals, sensitivity trends, and audience analysis.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Market Analysis</strong>
+        <p>Competitive positioning, pricing gap analysis, and category growth assessment.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Demographic Modeling</strong>
+        <p>Intersectional shopper estimate built from independently sourced inputs.</p>
+      </div>
+
+      <div class="cell">
+        <strong>Business Communication</strong>
+        <p>Executive-style recommendation structure with clear next steps and rationale.</p>
+      </div>
+    </div>
+
+    <footer>
+      Independent case study by Elizabeth Caldwell. This project is not affiliated with,
+      sponsored by, or endorsed by Dollar Tree.
+    </footer>
+  </main>
 </body>
 </html>
