@@ -122,7 +122,8 @@
       align-items: center;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -147,9 +148,17 @@
       font-weight: 400;
     }
 
-    .btn-primary:hover, .btn-secondary:hover { transform: translateY(-1px); }
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+    }
+
     .btn-primary:hover { opacity: 0.85; }
-    .btn-secondary:hover { border-color: var(--ink-3); color: var(--ink); }
+
+    .btn-secondary:hover {
+      border-color: var(--ink-3);
+      color: var(--ink);
+    }
 
     .product-visual {
       padding: 40px 0 80px;
@@ -251,25 +260,6 @@
       line-height: 1.45;
     }
 
-    .canva-container {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--bg-2);
-      margin-top: 18px;
-    }
-
-    .canva-container iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
     .download-box {
       display: flex;
       align-items: center;
@@ -287,12 +277,14 @@
       font-weight: 400;
       margin-bottom: 5px;
       letter-spacing: -0.01em;
+      color: var(--ink);
     }
 
     .download-box p {
       font-size: 13px;
       color: var(--ink-3);
       line-height: 1.5;
+      max-width: 460px;
     }
 
     footer {
@@ -308,13 +300,23 @@
 
     @media (max-width: 700px) {
       nav { padding: 0 1.25rem; }
+
       .nav-links { display: none; }
+
       .container { padding: 0 1.25rem; }
+
       section { padding: 56px 0; }
+
       .hero { padding: 64px 0 56px; }
+
       .product-visual { padding: 32px 0 56px; }
+
       .snapshot-grid { grid-template-columns: 1fr; }
-      .download-box { flex-direction: column; align-items: flex-start; }
+
+      .download-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -322,7 +324,9 @@
 <body>
 
 <nav>
-  <a href="https://elizabethcaldwell.github.io/Portfolio/" class="nav-name">Elizabeth Caldwell</a>
+  <a href="https://elizabethcaldwell.github.io/Portfolio/" class="nav-name">
+    Elizabeth Caldwell
+  </a>
 
   <ul class="nav-links">
     <li><a href="https://elizabethcaldwell.github.io/Portfolio/">Portfolio</a></li>
@@ -344,12 +348,12 @@
     </p>
 
     <div class="hero-actions">
-      <a href="BPure_Unscented_Strategic_Brief.pdf" class="btn-primary" download>
-        Download Full Brief →
+      <a href="BPure_Unscented_Pitch_Deck.pdf" class="btn-primary" target="_blank">
+        View Pitch Deck →
       </a>
 
-      <a href="#pitch-deck" class="btn-secondary">
-        View Pitch Deck
+      <a href="BPure_Unscented_Strategic_Brief.pdf" class="btn-secondary" download>
+        Download Full Brief
       </a>
 
       <a href="https://elizabethcaldwell.github.io/Portfolio/" class="btn-secondary">
@@ -427,12 +431,18 @@
       and launch strategy.
     </p>
 
-    <div class="canva-container">
-      <iframe
-        src="PASTE_CANVA_EMBED_URL_HERE"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
+    <div class="download-box">
+      <div>
+        <h3>B Pure Unscented Pitch Deck</h3>
+        <p>
+          Executive presentation covering consumer insights, competitive analysis,
+          demographic modeling, product strategy, and launch recommendations.
+        </p>
+      </div>
+
+      <a href="BPure_Unscented_Pitch_Deck.pdf" class="btn-primary" target="_blank">
+        View Pitch Deck →
+      </a>
     </div>
   </section>
 
@@ -442,7 +452,10 @@
     <div class="download-box">
       <div>
         <h3>B Pure Unscented Strategic Brief</h3>
-        <p>Download the full research, demographic modeling, and campaign strategy brief.</p>
+        <p>
+          Download the full research, demographic modeling, business case,
+          and campaign strategy brief.
+        </p>
       </div>
 
       <a href="BPure_Unscented_Strategic_Brief.pdf" class="btn-primary" download>
