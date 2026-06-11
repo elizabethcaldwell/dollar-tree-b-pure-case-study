@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B Pure Unscented Case Study</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 0 24px;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+    }
+
+    h1 {
+      color: #2f2f2f;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-top: 36px;
+      color: #4a4a4a;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 18px;
+      background: #6b5b3e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background: #4f422d;
+    }
+
+    footer {
+      margin-top: 48px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>B Pure Unscented</h1>
+    <p class="subtitle">
+      A Product Extension Proposal for Dollar Tree’s B Pure Line
+    </p>
+
+    <p>
+      This case study presents a product extension proposal for an unscented version
+      of Dollar Tree’s B Pure organic cotton pads. The brief includes market analysis,
+      demographic modeling, competitive positioning, consumer demand signals, product
+      recommendations, and campaign strategy.
+    </p>
+
+    <h2>Project Focus</h2>
+    <p>
+      The proposal identifies an opportunity for Dollar Tree to expand its B Pure line
+      with an accessible, fragrance-free product designed for consumers with sensitivity
+      concerns who are currently underserved at lower price points.
+    </p>
+
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Consumer insights, market research, demographic analysis, competitive analysis,
+      product strategy, campaign planning, and executive-level business writing.
+    </p>
+
+    <a class="button" href="files/BPure_Unscented_Strategic_Brief_Formatted.docx" download>
+      Download Full Brief
+    </a>
+  </div>
+
+  <footer>
+    Independent case study by Elizabeth Caldwell. This project is not affiliated with
+    or endorsed by Dollar Tree.
+  </footer>
+</body>
+</html>
